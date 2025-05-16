@@ -17,6 +17,14 @@ Implementing an employee management app through FastAPI and an employee's task m
 - The CLI program can be run with: `python -m src.employee_mgmt.cli --help` This will also list the available commands.
 - More information about these commands can be viewed using `python -m src.employee_mgmt.cli <command-name> --help`
 
+### Authorization
+
+As of now, the project has very rudimentary authorization implemented.
+
+- An employee must login with their username and password to be able to view a specific employee's detail or to be able to view the list of all employees.
+- Only admin can create, update, or delete users.
+
 ### To Do
 
-- add authentication
+- improve authorization logic
+- adapt production ready project structure
