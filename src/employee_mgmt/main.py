@@ -69,7 +69,7 @@ async def view_all_employees(
 
 @app.get("/employees/{employee_id}", response_model=Employee)
 async def view_employee(
-    token: Annotated[str, Depends(admin_login)], employee_id: UUID
+    token: Annotated[str, Depends(get_current_employee)], employee_id: UUID
 ) -> Employee:
     employees: Employee = read_from_file()
     for employee in employees:
