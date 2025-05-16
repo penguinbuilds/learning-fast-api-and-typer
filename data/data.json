@@ -1,0 +1,36 @@
+[
+  {
+    "employee_id": "d1229671-5323-40f7-a8b1-06fd5ca13182",
+    "name": "tim",
+    "username": "tim",
+    "email": "tim@company.com",
+    "department": "Sales",
+    "tasks": [
+      {
+        "task_id": "7b0bc683-485f-4c6a-ad54-a9f026f04063",
+        "title": "abc",
+        "description": "def",
+        "completed": "True"
+      }
+    ],
+    "hashed_password": "$2b$12$TKFqxaU4pLEFmwX.Q.WcJ.8O8chhAzbgKYP2pnP5RnYEdMCsFi91S"
+  },
+  {
+    "employee_id": "62941295-fbad-4355-9bb9-e7e7c41eb012",
+    "name": "John Doe",
+    "username": "johndoe",
+    "email": "john@company.com",
+    "department": "Sales",
+    "tasks": [],
+    "hashed_password": "$2b$12$N6SeLd9mZlXAVMSlshDgWeWcvdhahkiUSfiXT.Exgc4wWieSxK3Y."
+  },
+  {
+    "employee_id": "5bfe112f-d351-4830-8aaa-93e2beb5c642",
+    "name": "Alice",
+    "username": "alice",
+    "email": "alice@company.com",
+    "department": "Legal",
+    "tasks": [],
+    "hashed_password": "$2b$12$QqsV0GzGk9Wo/zvLmMpXX.GbsUUGpeoSIzk9z5/UEBnRYIz1mPdl6"
+  }
+]
