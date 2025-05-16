@@ -1,5 +1,14 @@
 [
   {
+    "employee_id": "5bfe112f-d351-4830-8aaa-93e2beb5c641",
+    "name": "Mike",
+    "username": "admin",
+    "email": "admin@company.com",
+    "department": "HR",
+    "tasks": [],
+    "hashed_password": "$2b$12$dEOb2yPXRnLZz7Y8lAY/Suyn5cyi/IuYQKciclXtbotrw1B87pOnm"
+  },
+  {
     "employee_id": "d1229671-5323-40f7-a8b1-06fd5ca13182",
     "name": "tim",
     "username": "tim",

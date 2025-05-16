@@ -85,3 +85,23 @@ async def get_current_employee(token: Annotated[str, Depends(oauth2_scheme)]):
     if employee is None:
         raise credentials_exception
     return employee
+
+
+async def admin_login(token: Annotated[str, Depends(oauth2_scheme)]):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Admin privileges required.",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username = payload.get("sub")
+        if username != "admin":
+            raise credentials_exception
+        token_data = TokenData(username=username)
+    except InvalidTokenError:
+        raise credentials_exception
+    employee = get_employee(username=token_data.username)
+    # if employee is None:
+    #     raise credentials_exception
+    return employee

@@ -13,6 +13,7 @@ from .auth import (
     create_access_token,
     get_password_hash,
     get_current_employee,
+    admin_login,
     ACCESS_TOKEN_EXPIRE_MINUTES,
 )
 
@@ -68,7 +69,7 @@ async def view_all_employees(
 
 @app.get("/employees/{employee_id}", response_model=Employee)
 async def view_employee(
-    token: Annotated[str, Depends(get_current_employee)], employee_id: UUID
+    token: Annotated[str, Depends(admin_login)], employee_id: UUID
 ) -> Employee:
     employees: Employee = read_from_file()
     for employee in employees:
@@ -79,7 +80,7 @@ async def view_employee(
 
 @app.post("/employees/")
 async def create_employees(
-    token: Annotated[str, Depends(get_current_employee)],
+    token: Annotated[str, Depends(admin_login)],
     employee_details: EmployeeTemplate,
 ) -> Employee:
     # username = employee_details.name.lower().replace(" ", "")
@@ -99,7 +100,7 @@ async def create_employees(
 
 @app.put("/employees/{employee_id}", response_model=Employee)
 async def update_employee(
-    token: Annotated[str, Depends(get_current_employee)],
+    token: Annotated[str, Depends(admin_login)],
     employee_id: UUID,
     updated_details: EmployeeTemplate,
 ) -> Employee:
@@ -122,7 +123,7 @@ async def update_employee(
 
 @app.delete("/employees/{employee_id}", status_code=204)
 async def delete_employee(
-    token: Annotated[str, Depends(get_current_employee)], employee_id: UUID
+    token: Annotated[str, Depends(admin_login)], employee_id: UUID
 ) -> None:
     employees: Employee = read_from_file()
     for index, employee in enumerate(employees):
